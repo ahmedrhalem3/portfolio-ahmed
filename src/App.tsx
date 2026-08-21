@@ -57,6 +57,14 @@ type Project = {
 
 
 /* =========================================================
+   ASSETS
+========================================================= */
+
+const asset = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
+
+/* =========================================================
    EXPERIENCES
 ========================================================= */
 
@@ -133,7 +141,7 @@ const experiences: Experience[] = [
 
     screenshots: [
       {
-        src: '/projects/medhub/acceuil.png',
+        src: asset('projects/medhub/acceuil.png'),
         alt: 'Page d’accueil de MEDHUB',
         title: 'Accueil',
         description:
@@ -141,7 +149,7 @@ const experiences: Experience[] = [
       },
 
       {
-        src: '/projects/medhub/demande.png',
+        src: asset('projects/medhub/demande.png'),
         alt: 'Création d’une demande MEDHUB',
         title: 'Création d’une demande',
         description:
@@ -149,7 +157,7 @@ const experiences: Experience[] = [
       },
 
       {
-        src: '/projects/medhub/detail.png',
+        src: asset('projects/medhub/detail.png'),
         alt: 'Détail d’une demande MEDHUB',
         title: 'Détail d’une demande',
         description:
@@ -157,7 +165,7 @@ const experiences: Experience[] = [
       },
 
       {
-        src: '/projects/medhub/liste.png',
+        src: asset('projects/medhub/liste.png'),
         alt: 'Liste des demandes MEDHUB',
         title: 'Liste des demandes',
         description:
@@ -201,7 +209,7 @@ const experiences: Experience[] = [
 
     screenshots: [
       {
-        src: '/projects/stage2/home.png',
+        src: asset('projects/stage2/home.png'),
         alt: "Interface d'accueil de l'application Commune de Fès",
         title: "Interface d'accueil",
         description:
@@ -209,7 +217,7 @@ const experiences: Experience[] = [
       },
 
       {
-        src: '/projects/stage2/services.png',
+        src: asset('projects/stage2/services.png'),
         alt: 'Page des services',
         title: 'Services',
         description:
@@ -217,7 +225,7 @@ const experiences: Experience[] = [
       },
 
       {
-        src: '/projects/stage2/formulaire.png',
+        src: asset('projects/stage2/formulaire.png'),
         alt: 'Formulaire administratif',
         title: 'Formulaire de demande',
         description:
@@ -225,7 +233,7 @@ const experiences: Experience[] = [
       },
 
       {
-        src: '/projects/stage2/admin-dashboard.png',
+        src: asset('projects/stage2/admin-dashboard.png'),
         alt: 'Tableau de bord administrateur',
         title: 'Dashboard administrateur',
         description:
@@ -265,7 +273,7 @@ const experiences: Experience[] = [
 
     screenshots: [
       {
-        src: '/projects/elephantvert/interface.png',
+        src: asset('projects/elephantvert/interface.png'),
         alt: "Interface principale de l'application de gestion de stock",
         title: 'Interface principale',
         description:
@@ -273,7 +281,7 @@ const experiences: Experience[] = [
       },
 
       {
-        src: '/projects/elephantvert/mouvement.png',
+        src: asset('projects/elephantvert/mouvement.png'),
         alt: 'Gestion des mouvements de stock',
         title: 'Mouvements de stock',
         description:
@@ -281,7 +289,7 @@ const experiences: Experience[] = [
       },
 
       {
-        src: '/projects/elephantvert/inventaire.png',
+        src: asset('projects/elephantvert/inventaire.png'),
         alt: 'Inventaire du stock',
         title: 'Inventaire',
         description:
@@ -498,7 +506,7 @@ const projects: Project[] = [
       'Développement web Python/Flask, intégration de données, web scraping, consommation d’API, visualisation, tests et conception UML.',
 
     video: {
-      src: '/projects/benzscore/pfavideo.mp4',
+      src: asset('projects/benzscore/pfavideo.mp4'),
       title: 'Démonstration de BenzScore',
       description:
         'Présentation des principales fonctionnalités de la plateforme : navigation, résultats sportifs, statistiques et consultation des données.',
@@ -557,7 +565,7 @@ const projects: Project[] = [
 
     screenshots: [
       {
-        src: '/projects/chess/ChessInterface.png',
+        src: asset('projects/chess/ChessInterface.png'),
         alt: "Interface principale du jeu d'échecs",
         title: 'Interface principale',
         description:
@@ -565,7 +573,7 @@ const projects: Project[] = [
       },
 
       {
-        src: '/projects/chess/ChessBoard.png',
+        src: asset('projects/chess/ChessBoard.png'),
         alt: "Plateau du jeu d'échecs",
         title: "Plateau d'échecs",
         description:
@@ -619,11 +627,11 @@ function App() {
 
         <div className="profile-image-wrapper">
 
-        <img
-          src="/photoPortfolio.png"
-          alt="Ahmed Rhalem"
-          className="profile-image"
-        />
+          <img
+            src={asset('photoPortfolio.png')}
+            alt="Ahmed Rhalem"
+            className="profile-image"
+          />
 
         </div>
 
@@ -1416,10 +1424,6 @@ function App() {
                   </div>
 
 
-                  {/* =================================================
-                      VIDEO DU PROJET
-                  ================================================= */}
-
                   {selectedProject.video && (
 
                     <div className="project-video-section">
@@ -1466,10 +1470,6 @@ function App() {
 
                   )}
 
-
-                  {/* =================================================
-                      CAPTURES DES PROJETS
-                  ================================================= */}
 
                   {selectedProject.screenshots && (
 
@@ -1832,7 +1832,7 @@ function App() {
               <div className="education-header">
 
                 <img
-                  src="/logos/lyon2.png"
+                  src={asset('logos/lyon2.png')}
                   alt="Logo Université Lumière Lyon 2"
                   className="education-logo"
                 />
@@ -1894,7 +1894,7 @@ function App() {
               <div className="education-header">
 
                 <img
-                  src="/logos/esisa.png"
+                  src={asset('logos/esisa.png')}
                   alt="Logo ESISA"
                   className="education-logo"
                 />
@@ -1942,7 +1942,7 @@ function App() {
               <div className="education-header">
 
                 <img
-                  src="/logos/esisa.png"
+                  src={asset('logos/esisa.png')}
                   alt="Logo ESISA"
                   className="education-logo"
                 />
