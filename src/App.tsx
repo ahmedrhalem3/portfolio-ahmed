@@ -1861,9 +1861,7 @@ function App() {
                   Labellisation ANSSI
                 </span>
 
-                <span>
-                  Soutenance prévue le 11 septembre 2026
-                </span>
+
 
               </div>
 
